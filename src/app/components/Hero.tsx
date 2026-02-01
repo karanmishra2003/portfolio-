@@ -21,10 +21,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen pt-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl" />
+    <section id="hero" className="min-h-screen pt-20 px-4 relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent dark:via-purple-900/20" />
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-purple-600/20 dark:bg-purple-600/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-600/20 dark:bg-cyan-600/30 rounded-full blur-3xl" />
       
       <motion.div
         initial="hidden"
@@ -39,28 +39,28 @@ const Hero = () => {
           >
             <motion.span
               variants={itemVariants}
-              className="inline-block px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-sm mb-6"
+              className="inline-block px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm mb-6"
             >
               Available for opportunities
             </motion.span>
             
             <motion.h1
               variants={itemVariants}
-              className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-4"
+              className="font-bold text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-4"
             >
-              Hi, I&apos;m <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 text-transparent bg-clip-text">Karan Mishra</span>
+              Hi, I&apos;m <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 text-transparent bg-clip-text dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400">Karan Mishra</span>
             </motion.h1>
             
             <motion.h2
               variants={itemVariants}
-              className="text-xl md:text-2xl text-gray-400 mb-6"
+              className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6"
             >
               Information Technology Undergraduate | AI & Full Stack Developer
             </motion.h2>
             
             <motion.p
               variants={itemVariants}
-              className="text-gray-300 leading-relaxed mb-8 max-w-lg"
+              className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 max-w-lg"
             >
               Information Technology undergraduate with hands-on experience in AI-driven application development, full-stack engineering, and data analytics. Skilled in building scalable systems using Python, React, FastAPI, and modern LLM frameworks.
             </motion.p>
@@ -85,7 +85,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.2, y: -5 }}
                   href="https://github.com/karanmishra2003"
                   target="_blank"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-white transition-colors"
                 >
                   <FaGithub />
                 </motion.a>
@@ -93,7 +93,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.2, y: -5 }}
                   href="https://www.linkedin.com/in/karan-mishra-4374762a0/"
                   target="_blank"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                 >
                   <FaLinkedin />
                 </motion.a>
@@ -101,7 +101,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.2, y: -5 }}
                   href="https://wa.me/919315635453"
                   target="_blank"
-                  className="text-green-400 hover:text-green-300 transition-colors"
+                  className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors"
                 >
                   <FaWhatsapp />
                 </motion.a>
@@ -109,7 +109,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.2, y: -5 }}
                   href="https://x.com/KARAN_MISHRA_14"
                   target="_blank"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors"
                 >
                   <FaSquareXTwitter />
                 </motion.a>
@@ -126,7 +126,7 @@ const Hero = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="absolute -inset-4 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full blur-2xl opacity-30"
+                className="absolute -inset-4 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full blur-2xl opacity-30 dark:opacity-40"
               />
               
               <motion.div
@@ -136,7 +136,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.02 }}
                 className="relative w-64 h-64 md:w-80 md:h-80"
               >
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-800 shadow-2xl">
                   <Image
                     src="/Profile.jpeg"
                     alt="Karan Mishra - AI & Full Stack Developer"
@@ -170,7 +170,7 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="flex flex-col items-center text-gray-500"
+          className="flex flex-col items-center text-gray-500 dark:text-gray-400"
         >
           <span className="text-sm mb-2">Scroll down</span>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

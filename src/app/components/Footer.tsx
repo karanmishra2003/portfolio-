@@ -19,7 +19,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/50 border-t border-gray-800 backdrop-blur-lg">
+    <footer className="bg-gray-100 dark:bg-black/50 border-t border-gray-200 dark:border-gray-800 backdrop-blur-lg transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <motion.div
@@ -28,8 +28,8 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold text-white mb-4">Karan Mishra</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Karan Mishra</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
               Full Stack Developer passionate about building beautiful, functional, and user-friendly web applications.
             </p>
           </motion.div>
@@ -40,13 +40,13 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {footerLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -61,7 +61,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold text-white mb-4">Connect</h4>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Connect</h4>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social, index) => (
                 <a
@@ -69,7 +69,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300 text-sm"
+                  className="px-4 py-2 bg-gray-200 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-400 hover:text-purple-600 dark:hover:text-white hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-300 text-sm"
                 >
                   {social.name}
                 </a>
@@ -83,12 +83,12 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-500 text-sm">
             © {currentYear} Karan Mishra. All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-500 text-sm">
             Made with ❤️ using Next.js & Tailwind CSS
           </p>
         </motion.div>

@@ -18,10 +18,10 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 px-4 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-900/5 to-transparent" />
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-pink-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl" />
+    <section id="projects" className="py-24 px-4 relative bg-gray-50 dark:bg-black transition-colors duration-300">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-900/5 to-transparent dark:via-pink-900/10" />
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-pink-600/20 dark:bg-pink-600/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-600/20 dark:bg-cyan-600/30 rounded-full blur-3xl" />
       
       <motion.div
         initial="hidden"
@@ -32,14 +32,14 @@ export default function Projects() {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 text-transparent bg-clip-text"
+          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-500 text-transparent bg-clip-text dark:from-pink-400 dark:via-purple-400 dark:to-cyan-400"
         >
           My Projects
         </motion.h2>
         
         <motion.p
           variants={itemVariants}
-          className="text-gray-400 text-center mb-16 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-400 text-center mb-16 max-w-2xl mx-auto"
         >
           AI-powered applications and full-stack projects showcasing expertise in LLMs, RAG systems, React development, and modern web technologies
         </motion.p>

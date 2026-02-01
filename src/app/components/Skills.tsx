@@ -78,14 +78,14 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 px-4 relative">
+    <section id="skills" className="py-24 px-4 relative bg-gray-50 dark:bg-black transition-colors duration-300">
       <motion.div 
         style={{ rotate }}
-        className="absolute top-20 right-20 w-32 h-32 bg-purple-500/10 rounded-full border border-purple-500/20"
+        className="absolute top-20 right-20 w-32 h-32 bg-purple-500/10 dark:bg-purple-500/20 rounded-full border border-purple-500/20"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent" />
-      <div className="absolute top-0 right-1/4 w-72 h-72 bg-cyan-600/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent dark:via-blue-900/10" />
+      <div className="absolute top-0 right-1/4 w-72 h-72 bg-cyan-600/20 dark:bg-cyan-600/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-600/20 dark:bg-purple-600/30 rounded-full blur-3xl animate-pulse" />
       
       <motion.div
         initial="hidden"
@@ -96,7 +96,7 @@ const Skills = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text"
+          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-transparent bg-clip-text dark:from-blue-400 dark:via-purple-400 dark:to-pink-400"
           whileInView={{ scale: [1, 1.05, 1] }}
           viewport={{ once: true }}
         >
@@ -105,7 +105,7 @@ const Skills = () => {
         
         <motion.p
           variants={itemVariants}
-          className="text-gray-400 text-center mb-14 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-400 text-center mb-14 max-w-2xl mx-auto"
         >
           A comprehensive overview of my technical skills and expertise in AI, full-stack development, and modern technologies
         </motion.p>
@@ -120,7 +120,7 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: catIndex * 0.1 }}
             className="mb-12"
           >
-            <h3 className="text-2xl font-semibold text-white mb-6 pl-2 border-l-4 border-purple-500 flex items-center gap-3">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 pl-2 border-l-4 border-purple-500 flex items-center gap-3">
               <motion.span
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 2, repeatDelay: 1 }}
@@ -143,7 +143,7 @@ const Skills = () => {
                     animate={{ opacity: [0.2, 0.4, 0.2] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                   />
-                  <div className="relative flex flex-col items-center p-4 rounded-xl bg-gray-900/90 backdrop-blur-xl border border-gray-800 transition-all duration-300 group-hover:border-purple-500/50 group-hover:bg-gray-900">
+                  <div className="relative flex flex-col items-center p-4 rounded-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-gray-200 dark:border-gray-800 transition-all duration-300 group-hover:border-purple-500/50 group-hover:bg-white dark:group-hover:bg-gray-900">
                     <motion.div 
                       className={`${skill.color} text-4xl mb-2`}
                       whileHover={{ scale: 1.2, rotate: 5 }}
@@ -151,8 +151,8 @@ const Skills = () => {
                     >
                       {skill.icon}
                     </motion.div>
-                    <span className="text-white font-medium text-sm group-hover:text-purple-300 transition-colors">{skill.name}</span>
-                    <div className="w-full bg-gray-700 rounded-full h-1.5 mt-2 overflow-hidden">
+                    <span className="text-gray-900 dark:text-white font-medium text-sm group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">{skill.name}</span>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -160,7 +160,7 @@ const Skills = () => {
                         className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
                       />
                     </div>
-                    <span className="text-xs text-gray-500 mt-1 group-hover:text-purple-400 transition-colors">{skill.level}%</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">{skill.level}%</span>
                   </div>
                 </motion.div>
               ))}

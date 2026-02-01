@@ -33,10 +33,10 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-24 px-4 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent" />
-      <div className="absolute top-1/4 right-0 w-72 h-72 bg-pink-600/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl animate-pulse" />
+    <section id="experience" className="py-24 px-4 relative bg-gray-50 dark:bg-black transition-colors duration-300">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent dark:via-purple-900/10" />
+      <div className="absolute top-1/4 right-0 w-72 h-72 bg-pink-600/20 dark:bg-pink-600/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-cyan-600/20 dark:bg-cyan-600/30 rounded-full blur-3xl animate-pulse" />
       
       <motion.div
         initial="hidden"
@@ -47,7 +47,7 @@ const Experience = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 text-transparent bg-clip-text"
+          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-500 text-transparent bg-clip-text dark:from-pink-400 dark:via-purple-400 dark:to-cyan-400"
           whileInView={{ scale: [1, 1.05, 1] }}
           viewport={{ once: true }}
         >
@@ -56,7 +56,7 @@ const Experience = () => {
         
         <motion.p
           variants={itemVariants}
-          className="text-gray-400 text-center mb-16 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-400 text-center mb-16 max-w-2xl mx-auto"
         >
           My professional journey and industry exposure
         </motion.p>
@@ -84,7 +84,7 @@ const Experience = () => {
                     boxShadow: "0 25px 50px -12px rgba(168, 85, 247, 0.25)"
                   }}
                   whileTap={{ scale: 0.99 }}
-                  className="bg-gray-900/80 backdrop-blur-lg rounded-2xl p-8 md:p-10 border border-gray-800 hover:border-purple-500/50 transition-all duration-300 cursor-pointer"
+                  className="bg-white dark:bg-gray-900/80 backdrop-blur-lg rounded-2xl p-8 md:p-10 border border-gray-200 dark:border-gray-800 hover:border-purple-500/50 transition-all duration-300 cursor-pointer"
                 >
                   <motion.div 
                     className="flex items-center gap-3 mb-4"
@@ -93,28 +93,28 @@ const Experience = () => {
                     viewport={{ once: true }}
                   >
                     <motion.span 
-                      className="text-3xl text-purple-400"
+                      className="text-3xl text-purple-600 dark:text-purple-400"
                       whileHover={{ scale: 1.2, rotate: 10 }}
                     >
                       <FaBriefcase />
                     </motion.span>
-                    <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
                   </motion.div>
                   <motion.div 
-                    className="flex flex-wrap items-center gap-3 mb-6 text-gray-400"
+                    className="flex flex-wrap items-center gap-3 mb-6 text-gray-600 dark:text-gray-400"
                     initial={{ x: -20 }}
                     whileInView={{ x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
                   >
                     <motion.span 
-                      className="text-lg font-medium text-white"
-                      whileHover={{ color: "#a855f7" }}
+                      className="text-lg font-medium text-gray-900 dark:text-white"
+                      whileHover={{ color: "#9333ea" }}
                     >
                       {exp.company}
                     </motion.span>
                     <motion.span 
-                      className="flex items-center gap-2 text-purple-300"
+                      className="flex items-center gap-2 text-purple-600 dark:text-purple-300"
                       whileHover={{ scale: 1.05 }}
                     >
                       <FaCalendarAlt />
@@ -125,14 +125,14 @@ const Experience = () => {
                     {exp.description.map((desc, i) => (
                       <motion.li 
                         key={i} 
-                        className="text-gray-300 text-lg flex items-start gap-3"
+                        className="text-gray-700 dark:text-gray-300 text-lg flex items-start gap-3"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
                       >
                         <motion.span 
-                          className="text-purple-400 mt-1 text-xl"
+                          className="text-purple-600 dark:text-purple-400 mt-1 text-xl"
                           whileHover={{ scale: 1.5, color: "#ec4899" }}
                         >
                           •
@@ -153,7 +153,7 @@ const Experience = () => {
                         key={i}
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30 cursor-default hover:bg-purple-500/30 transition-colors"
+                        className="px-4 py-2 bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 rounded-full text-sm border border-purple-200 dark:border-purple-500/30 cursor-default hover:bg-purple-200 dark:hover:bg-purple-500/30 transition-colors"
                       >
                         {tech}
                       </motion.span>
@@ -163,7 +163,7 @@ const Experience = () => {
               </div>
               
               <motion.div
-                className="absolute left-6 top-8 md:left-1/2 md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-gray-900 z-10"
+                className="absolute left-6 top-8 md:left-1/2 md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-white dark:border-gray-900 z-10"
                 whileHover={{ scale: 1.5 }}
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}

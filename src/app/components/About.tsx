@@ -47,13 +47,13 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 px-4 md:px-8 lg:px-16 relative overflow-hidden">
+    <section id="about" className="py-24 px-4 md:px-8 lg:px-16 relative overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
       <motion.div 
         style={{ y }}
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" 
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent dark:via-purple-900/20" 
       />
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-purple-600/20 dark:bg-purple-600/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue-600/20 dark:bg-blue-600/30 rounded-full blur-3xl animate-pulse" />
       
       <motion.div
         initial="hidden"
@@ -64,7 +64,7 @@ const About = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text"
+          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 text-transparent bg-clip-text dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400"
           whileInView={{ scale: [1, 1.02, 1] }}
           viewport={{ once: true }}
         >
@@ -77,26 +77,26 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-gray-300 text-center text-lg leading-relaxed mb-8"
+            className="text-gray-700 dark:text-gray-300 text-center text-lg leading-relaxed mb-8"
           >
             I am an <motion.span 
-              whileHover={{ scale: 1.05, color: "#a855f7" }}
-              className="text-purple-400 font-semibold inline-block"
+              whileHover={{ scale: 1.05, color: "#9333ea" }}
+              className="text-purple-600 dark:text-purple-400 font-semibold inline-block"
             >Information Technology undergraduate</motion.span> with a strong focus on <motion.span 
               whileHover={{ scale: 1.05, color: "#ec4899" }}
-              className="text-pink-400 font-semibold inline-block"
+              className="text-pink-500 dark:text-pink-400 font-semibold inline-block"
             >AI-driven application development</motion.span>, 
             full-stack engineering, and <motion.span 
-              whileHover={{ scale: 1.05, color: "#06b6d4" }}
-              className="text-cyan-400 font-semibold inline-block"
+              whileHover={{ scale: 1.05, color: "#0891b2" }}
+              className="text-cyan-600 dark:text-cyan-400 font-semibold inline-block"
             >data analytics</motion.span>. I enjoy building scalable, production-ready systems using technologies like 
             <motion.span 
               whileHover={{ scale: 1.05, color: "#eab308" }}
-              className="text-yellow-400 font-semibold inline-block mx-1"
+              className="text-yellow-500 dark:text-yellow-400 font-semibold inline-block mx-1"
             >Python</motion.span>, 
             <motion.span 
-              whileHover={{ scale: 1.05, color: "#60a5fa" }}
-              className="text-blue-400 font-semibold inline-block"
+              whileHover={{ scale: 1.05, color: "#3b82f6" }}
+              className="text-blue-500 dark:text-blue-400 font-semibold inline-block"
             >React</motion.span>, and modern large language models with hands-on experience in containerization and cloud-native deployment.
           </motion.p>
           <motion.p
@@ -104,19 +104,19 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-300 text-center text-lg leading-relaxed mb-8"
+            className="text-gray-700 dark:text-gray-300 text-center text-lg leading-relaxed mb-8"
           >
             I have industry exposure as a <motion.span 
               whileHover={{ scale: 1.05, color: "#22c55e" }}
-              className="text-green-400 font-semibold inline-block"
+              className="text-green-600 dark:text-green-400 font-semibold inline-block"
             >Data Analyst Intern at KBR</motion.span>, where I delivered data-driven solutions that improved 
             operational efficiency. Passionate about <motion.span 
               whileHover={{ scale: 1.05, color: "#f97316" }}
-              className="text-orange-400 font-semibold inline-block"
+              className="text-orange-500 dark:text-orange-400 font-semibold inline-block"
             >Generative AI</motion.span>, 
             <motion.span 
               whileHover={{ scale: 1.05, color: "#8b5cf6" }}
-              className="text-violet-400 font-semibold inline-block mx-1"
+              className="text-violet-600 dark:text-violet-400 font-semibold inline-block mx-1"
             >LLMOps</motion.span>, and real-world problem solving, I actively work on 
             projects that combine intelligent systems with clean architecture and impactful user experiences.
           </motion.p>
@@ -136,7 +136,7 @@ const About = () => {
                 boxShadow: "0 25px 50px -12px rgba(168, 85, 247, 0.25)"
               }}
               whileTap={{ scale: 0.98 }}
-              className={`bg-gradient-to-br ${item.color} backdrop-blur-lg rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 group cursor-pointer`}
+              className={`bg-gradient-to-br ${item.color} backdrop-blur-lg rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 group cursor-pointer dark:bg-gray-900/90`}
             >
               <motion.div 
                 className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300"
@@ -144,8 +144,8 @@ const About = () => {
               >
                 {item.icon}
               </motion.div>
-              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">{item.title}</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors">{item.desc}</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">{item.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors">{item.desc}</p>
               <motion.div
                 className="absolute inset-0 rounded-2xl border-2 border-purple-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 whileHover={{ scale: 1.02 }}
