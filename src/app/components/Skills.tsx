@@ -79,10 +79,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-24 px-4 relative bg-gray-50 dark:bg-black transition-colors duration-300">
-      <motion.div 
-        style={{ rotate }}
-        className="absolute top-20 right-20 w-32 h-32 bg-purple-500/10 dark:bg-purple-500/20 rounded-full border border-purple-500/20"
-      />
+      {/* removed decorative empty circle per request */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent dark:via-blue-900/10" />
       <div className="absolute top-0 right-1/4 w-72 h-72 bg-cyan-600/20 dark:bg-cyan-600/30 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-600/20 dark:bg-purple-600/30 rounded-full blur-3xl animate-pulse" />
