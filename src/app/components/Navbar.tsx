@@ -31,10 +31,10 @@ export default function Navbar() {
   ];
 
   const socialLinks = [
-    { icon: <FaGithub />, href: "https://github.com/karanmishra2003", color: "hover:text-white" },
-    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/karan-mishra-4374762a0/", color: "hover:text-blue-400" },
-    { icon: <FaWhatsapp />, href: "https://wa.me/9315635453", color: "hover:text-green-400" },
-    { icon: <FaSquareXTwitter />, href: "https://x.com/KARAN_MISHRA_14", color: "hover:text-gray-300" },
+    { icon: <FaGithub />, href: "https://github.com/karanmishra2003", color: "hover:text-gray-900 dark:hover:text-white" },
+    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/karan-mishra-4374762a0/", color: "hover:text-blue-700 dark:hover:text-blue-400" },
+    { icon: <FaWhatsapp />, href: "https://wa.me/9315635453", color: "hover:text-green-700 dark:hover:text-green-400" },
+    { icon: <FaSquareXTwitter />, href: "https://x.com/KARAN_MISHRA_14", color: "hover:text-gray-900 dark:hover:text-white" },
   ];
 
   return (
@@ -92,7 +92,7 @@ export default function Navbar() {
                 href={social.href}
                 target="_blank"
                 whileHover={{ scale: 1.1, y: -2 }}
-                    className={`text-gray-600 dark:text-gray-400 transition-colors ${social.color}`}
+                className={`text-gray-700 dark:text-gray-400 transition-colors ${social.color}`}
               >
                 <span className="text-xl">{social.icon}</span>
               </motion.a>
@@ -102,7 +102,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white text-2xl focus:outline-none"
+              className="text-gray-800 dark:text-white text-2xl focus:outline-none"
             >
               {menuOpen ? <FiX /> : <FiAlignJustify />}
             </button>
@@ -153,7 +153,7 @@ export default function Navbar() {
                     href={social.href}
                     target="_blank"
                     whileHover={{ scale: 1.1 }}
-            className={`text-gray-600 dark:text-gray-400 transition-colors ${social.color}`}
+                    className={`text-gray-700 dark:text-gray-400 transition-colors ${social.color.replace('hover:text-white', 'hover:text-gray-900')}`}
                   >
                     <span className="text-2xl">{social.icon}</span>
                   </motion.a>
