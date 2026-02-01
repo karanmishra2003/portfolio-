@@ -229,7 +229,7 @@ const Education = () => {
               </motion.h4>
               <span className="text-4xl">🎯</span>
             </motion.div>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-gray-700">
               Active participant in multiple hackathons including <motion.span
                 whileHover={{ color: "#f97316", scale: 1.05 }}
                 className="text-orange-500 dark:text-orange-400 font-semibold inline-block"
