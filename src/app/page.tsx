@@ -10,7 +10,6 @@ import Projects from "@/app/components/Projects"
 import Education from "@/app/components/Education"
 import Contact from "@/app/components/Contact"
 import Footer from "@/app/components/Footer"
-import CustomCursor from "@/components/CustomCursor"
 import AnimatedBackground from "@/components/AnimatedBackground"
 import ScrollProgress from "@/components/ScrollProgress"
 
@@ -40,12 +39,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden cursor-none">
-      {/* Custom cursor - hidden on mobile */}
-      <div className="hidden md:block">
-        <CustomCursor />
-      </div>
-      
+    <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300">
       {/* Animated particle background */}
       <AnimatedBackground />
       
