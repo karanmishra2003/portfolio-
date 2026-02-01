@@ -2,13 +2,15 @@
 import React, { useState, useEffect } from "react";
 import { FiAlignJustify, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaSquareXTwitter, FaSun, FaMoon } from "react-icons/fa6";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +38,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-black/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <motion.div
@@ -58,10 +60,10 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index }}
                 >
-                  <Link
-                    href={link.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm font-medium relative group"
-                  >
+                    <Link
+                      href={link.href}
+                      className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-white transition-colors text-sm font-medium relative group"
+                    >
                     {link.name}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full" />
                   </Link>
@@ -75,13 +77,22 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             className="hidden md:flex items-center gap-4"
           >
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-yellow-500 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
+            </motion.button>
             {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
                 target="_blank"
                 whileHover={{ scale: 1.1, y: -2 }}
-                className={`text-gray-400 transition-colors ${social.color}`}
+                    className={`text-gray-600 dark:text-gray-400 transition-colors ${social.color}`}
               >
                 <span className="text-xl">{social.icon}</span>
               </motion.a>
@@ -105,7 +116,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-lg border-b border-gray-800"
+            className="md:hidden bg-white/95 dark:bg-black/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800"
           >
             <ul className="flex flex-col items-center py-6 space-y-4">
               {navLinks.map((link, index) => (
@@ -118,20 +129,31 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="text-gray-300 hover:text-white transition-colors text-lg font-medium"
+                    className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-white transition-colors text-lg font-medium"
                   >
                     {link.name}
                   </Link>
                 </motion.li>
               ))}
               <div className="flex items-center gap-6 pt-4">
+                <motion.button
+                  onClick={() => {
+                    toggleTheme();
+                    setMenuOpen(false);
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-yellow-500 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? <FaSun className="text-2xl" /> : <FaMoon className="text-2xl" />}
+                </motion.button>
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
                     target="_blank"
                     whileHover={{ scale: 1.1 }}
-                    className={`text-gray-400 transition-colors ${social.color}`}
+            className={`text-gray-600 dark:text-gray-400 transition-colors ${social.color}`}
                   >
                     <span className="text-2xl">{social.icon}</span>
                   </motion.a>
