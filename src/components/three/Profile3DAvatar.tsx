@@ -300,16 +300,10 @@ function ProfileMesh({ imagePath }: Profile3DAvatarProps) {
             </meshStandardMaterial>
           </mesh>
         ) : (
-          <group position={[0, 0, 0.12]}>
-            <mesh position={[0, 0.35, 0]}>
-              <circleGeometry args={[0.5, 32]} />
-              <meshStandardMaterial color="#4a4a6a" metalness={0.5} roughness={0.3} />
-            </mesh>
-            <mesh position={[0, -0.25, 0]}>
-              <circleGeometry args={[0.35, 32]} />
-              <meshStandardMaterial color="#5a5a7a" metalness={0.5} roughness={0.3} />
-            </mesh>
-          </group>
+          <mesh position={[0, 0, 0.12]}>
+            <circleGeometry args={[1.2, 64]} />
+            <meshStandardMaterial color="#e5e7eb" metalness={0.3} roughness={0.7} />
+          </mesh>
         )}
 
         {/* Glowing ring overlay */}
