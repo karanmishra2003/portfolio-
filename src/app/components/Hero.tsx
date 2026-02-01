@@ -138,7 +138,7 @@ const Hero = () => {
               >
                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-800 shadow-2xl">
                   <Image
-                    src="/Profile.jpeg"
+                    src="/Profile.png"
                     alt="Karan Mishra - AI & Full Stack Developer"
                     width={320}
                     height={320}
