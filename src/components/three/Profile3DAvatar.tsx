@@ -292,17 +292,12 @@ function ProfileMesh({ imagePath }: Profile3DAvatarProps) {
         </mesh>
 
         {/* Profile photo */}
-        {texture ? (
+        {texture && (
           <mesh position={[0, 0, 0.12]}>
             <circleGeometry args={[1.2, 64]} />
             <meshStandardMaterial>
               <primitive object={texture} attach="map" />
             </meshStandardMaterial>
-          </mesh>
-        ) : (
-          <mesh position={[0, 0, 0.12]}>
-            <circleGeometry args={[1.2, 64]} />
-            <meshStandardMaterial color="#e5e7eb" metalness={0.3} roughness={0.7} />
           </mesh>
         )}
 
