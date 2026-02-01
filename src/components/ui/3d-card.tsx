@@ -120,7 +120,7 @@ export function CardItem({
   rotateY = 0,
   rotateZ = 0,
 }: CardItemProps) {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = React.useRef<HTMLElement>(null);
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
@@ -132,10 +132,13 @@ export function CardItem({
     }
   }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Component = Tag as unknown as React.ComponentType<any>;
+
   return (
-    <Tag ref={ref} className={cn("w-fit transition duration-200 ease-linear", className)}>
+    <Component ref={ref} className={cn("w-fit transition duration-200 ease-linear", className)}>
       {children}
-    </Tag>
+    </Component>
   );
 }
 
